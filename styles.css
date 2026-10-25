@@ -1,0 +1,339 @@
+/*
+   DAY 2: CSS พื้นฐาน
+   ลองเปลี่ยนตัวเลข px และค่าสี แล้วสังเกตผลบนหน้าเว็บ
+*/
+
+body {
+    margin: 0;                        
+    background-color: #fff5f8;
+    color: #4b3540;
+    font-family: "Prompt", sans-serif;
+    font-size: 16px;                  
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* Bootstrap จัดการเปิด/ปิด Modal; CSS นี้ปรับเฉพาะสีและมุม */
+#aboutModal .modal-content {
+    border: 1px solid #f2dce5;
+    border-radius: 18px;
+    background-color: #ffffff;
+    color: #4b3540;
+}
+
+#aboutModal .modal-header,
+#aboutModal .modal-footer {
+    border-color: #f2dce5;
+}
+
+#aboutModal .modal-title {
+    margin: 0;
+}
+
+body.dark-mode #aboutModal .modal-content {
+    background-color: #30262d;
+    color: #f6eaf0;
+    border-color: #513646;
+}
+
+body.dark-mode #aboutModal .modal-header,
+body.dark-mode #aboutModal .modal-footer {
+    border-color: #513646;
+}
+
+body.dark-mode #aboutModal .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+#page-header {
+    padding: 54px 20px 48px;           /* ระยะด้านใน: บน ซ้าย/ขวา ล่าง */
+    background-color: #a83e68;
+    background-image: linear-gradient(135deg, #a83e68, #e783a7);
+    color: white;
+}
+
+#page-header h1 {
+    margin: 0 0 8px;
+    color: #ff70c8;
+    font-size: 52px;
+    letter-spacing: 1px;
+}
+
+#page-header p {
+    margin: 0;
+    color: #ffeaf1;
+    font-size: 20px;
+}
+
+.main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-bottom: 1px solid #f2dce5;
+    background-color: rgba(255, 255, 255, 0.96);
+}
+
+.main-nav a {
+    padding: 8px 14px;
+    border-radius: 20px;
+    color: #a83e68;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.main-nav a:hover {
+    background-color: #a83e68;
+    color: white;
+}
+
+.nav-button,
+.action-button {
+    border: 0;
+    border-radius: 20px;
+    padding: 9px 15px;
+    background-color: #a83e68;
+    color: white;
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.nav-button:hover,
+.action-button:hover {
+    transform: translateY(-2px);
+    background-color: #843052;
+}
+
+.action-button {
+    margin: 8px 0 12px;
+}
+
+/* JavaScript ใส่ class นี้บน body เพื่อสลับธีมกลางคืน */
+body.dark-mode {
+    background-color: #211b20;
+    color: #f6eaf0;
+}
+
+body.dark-mode .main-nav {
+    border-bottom-color: #49313e;
+    background-color: rgba(42, 32, 39, 0.97);
+}
+
+body.dark-mode .main-nav a {
+    color: #ffc1d8;
+}
+
+body.dark-mode .main-nav a:hover {
+    background-color: #a83e68;
+    color: white;
+}
+
+body.dark-mode section {
+    border-color: #49313e;
+    background-color: #30262d;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode h2,
+body.dark-mode .intro,
+body.dark-mode .skill-card h3 {
+    color: #ffb2d0;
+}
+
+body.dark-mode .skill-card {
+    border-color: #513646;
+    background: #392c35;
+}
+
+body.dark-mode .skill-card p {
+    color: #e0cbd5;
+}
+
+body.dark-mode .highlight {
+    color: #ff9fc4;
+}
+
+body.dark-mode .contact-link {
+    background-color: #49313e;
+    color: #ffc1d8;
+}
+
+body.dark-mode .contact-link:hover {
+    background-color: #a83e68;
+    color: white;
+}
+
+main {
+    width:  min(760px, calc(100% - 32px));
+    margin: 32px auto;                 /* auto จัด main ให้อยู่กึ่งกลาง */
+}
+
+/* TAG selector: กฎนี้ใช้กับหัวข้อ h2 ทุกตัว */
+h2 {
+    margin: 0 0 20px;
+    color: #a83e68;
+    font-size: 25px;
+}
+
+h3 {
+    margin-bottom: 6px;
+}
+
+section {
+    margin: 20px 0;
+    padding: 28px 24px;
+    border: 1px solid #f2dce5;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: 0 8px 24px rgba(168, 62, 104, 0.08);
+}
+
+section p {
+    margin: 10px 0;
+}
+
+/* CLASS selector: class ใช้ซ้ำได้ เหมาะกับ element ที่ตกแต่งเหมือนกัน */
+.profile-picture {
+    margin: 8px 0;
+    border: 5px solid white;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(168, 62, 104, 0.2);
+    object-fit: cover;
+}
+
+.intro {
+    color: #bd527c;
+    font-size: 21px;
+}
+
+.highlight {
+    color: #c34478;
+    font-weight: bold;
+}
+
+/* class เดียวกันนี้อยู่บนกล่อง Skills ทั้งสองใบ จึงใช้กฎร่วมกันได้ */
+#skills-list {
+    display: flex;                       /* วางกล่อง Skills เรียงในแนวนอน */
+    gap: 16px;
+}
+
+/* ซ่อนรายการได้แม้ #skills-list จะใช้ display: flex */
+#skills-list[hidden] {
+    display: none;
+}
+
+/* การ์ด Skills ใช้ CSS ของเราเอง */
+.skill-card {
+    flex: none;
+    margin: 14px 0;
+    padding: 16px 20px;
+    border: 1px solid #f3dce6;
+    border-radius: 10px;
+    background-color: #fff9fb;
+}
+
+.skill-card p {
+    margin: 0;
+    color: #806b74;
+}
+
+.programming {
+    color: #c34478;
+}
+
+.web-development {
+    color: #a83e68;
+}
+
+hr {
+    width: 56px;
+    margin: 30px auto;
+    border: 0;
+    border-top: 3px solid #efbfd0;
+}
+
+iframe {
+    max-width: 100%;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(168, 62, 104, 0.14);
+}
+
+.carousel {
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.gallery-image {
+    height: 380px;
+    object-fit: cover;
+}
+
+.contact-link {
+    display: inline-block;
+    margin: 0 3px;
+    padding: 3px 10px;
+    border-radius: 6px;
+    background-color: #fff0f5;
+    color: #a83e68;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+/* Pseudo-class: เมื่อเอาเมาส์วางบนลิงก์ สีและตำแหน่งจะเปลี่ยน */
+.contact-link:hover {
+    transform: translateY(-2px);
+    background-color: #a83e68;
+    color: white;
+}
+
+/* หน้าจอแคบ: ลดขนาดและระยะห่างให้พอดีกับมือถือ */
+@media (max-width: 500px) {
+    #page-header {
+        padding: 40px 16px;
+    }
+
+    #page-header h1 {
+        font-size: 40px;
+    }
+
+    #page-header p {
+        font-size: 17px;
+    }
+
+    .main-nav {
+        flex-wrap: wrap;
+        gap: 4px;
+        padding: 8px;
+    }
+
+    .main-nav a {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+
+    .nav-button {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+
+    section {
+        padding: 22px 16px;
+    }
+
+    #skills-list {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .gallery-image {
+        height: 260px;
+    }
+}

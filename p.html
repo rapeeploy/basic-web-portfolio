@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="page-header">
+        <h1>My Portfolio</h1>
+        <p>Welcome to my personal website!</p>
+    </header>
+
+    <nav class="main-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#video">Favorite Video</a>
+        <a href="#contact">Contact</a>
+        <button id="theme-toggle" class="nav-button" type="button" onclick="toggleTheme()">Dark Mode</button>
+    </nav>
+
+    <main>
+        <!-- About Me -->
+        <section id="about">
+            <h2>About Me</h2>
+
+            <img src="tenor.gif" alt="My profile picture" width="200" height="200" class="profile-picture">
+
+            <h3 class="intro">Hi! I'm PAK 👋</h3>
+
+            <p>
+                I'm a student who is interested in
+                <span class="highlight">
+                    Web Development
+                </span>
+                and programming.
+            </p>
+
+            <p>
+                I enjoy learning new technologies and
+                building simple websites.
+            </p>
+
+            <button id="like-button" class="action-button" type="button" onclick="toggleLike()">
+                🤍 Like <span id="like-count">0</span>
+            </button>
+            <!-- Bootstrap เปิด Modal ตาม id ใน data-bs-target -->
+            <button class="action-button" type="button" data-bs-toggle="modal" data-bs-target="#aboutModal">
+                More About Me
+            </button>
+
+        </section>
+
+        <hr>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2>My Skills</h2>
+
+            <button id="skills-toggle" class="action-button" type="button" onclick="toggleSkills()">
+                Hide Skills
+            </button>
+
+            <div id="skills-list">
+                <div class="skill-card">
+                    <h3 class="programming">Programming</h3>
+                    <p>Python, Java, C</p>
+                </div>
+
+                <div class="skill-card">
+                    <h3 class="web-development">Web Development</h3>
+                    <p>HTML, CSS, JavaScript</p>
+                </div>
+            </div>
+
+        </section>
+
+        <hr>
+
+        <!-- Bootstrap 5 Carousel component -->
+        <section id="gallery">
+            <h2>My Gallery</h2>
+
+            <div id="portfolioCarousel" class="carousel slide" data-bs-interval="false">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="1.gif" class="d-block w-100 gallery-image" alt="Gallery image 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="2.jpg" class="d-block w-100 gallery-image" alt="Gallery image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="3.png" class="d-block w-100 gallery-image" alt="Gallery image 3">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Favorite Video -->
+        <section id="video">
+            <h2>My Favorite Video</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/yYMDZM70f68?si=UdmXXNg09kBdXylW&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+
+        <hr>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+
+            <p>
+                Email:
+                <span class="highlight">
+                    ppak@example.com
+                </span>
+            </p>
+
+            <p>
+                GitHub:
+                <a href="https://github.com/" target="_blank" class="contact-link">
+                    My GitHub
+                </a>
+            </p>
+
+            <p>
+                Instagram:
+                <a href="https://www.instagram.com/" target="_blank" class="contact-link">
+                    My Instagram
+                </a>
+            </p>
+
+            <br>
+        </section>
+    </main>
+
+    <!-- Bootstrap Modal: วางนอก main เพื่อให้กล่องซ้อนทับหน้าเว็บได้ -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="aboutModalTitle">More About PAK</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-start">
+                    <p>Hi! I'm PAK 👋 I'm a student who enjoys learning new technologies and building simple websites.</p>
+                    <h3 class="fs-6">What I'm learning</h3>
+                    <ul>
+                        <li>HTML and CSS for building and styling web pages</li>
+                        <li>JavaScript for interactive features</li>
+                        <li>Bootstrap for ready-made components</li>
+                    </ul>
+                    <p class="mb-0">Email: <span class="highlight">ppak@example.com</span></p>
+                </div>
+                <div class="modal-footer">
+                    <!-- Bootstrap จัดการปิดกล่องผ่าน data-bs-dismiss -->
+                    <button type="button" class="action-button m-0" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
