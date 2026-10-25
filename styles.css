@@ -231,7 +231,7 @@ section p {
 
 /* การ์ด Skills ใช้ CSS ของเราเอง */
 .skill-card {
-    flex: none;
+    flex: 1;
     margin: 14px 0;
     padding: 16px 20px;
     border: 1px solid #f3dce6;
